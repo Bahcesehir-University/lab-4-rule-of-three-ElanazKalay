@@ -116,12 +116,12 @@ public:
         // TODO: Implement copy assignment operator
         //   1. Increment g_assignmentCount
         g_assignmentCount++;
-        if(this != &other){
+        if(this == &other) return *this;
           delete[] m_data;
           m_length = other.m_length;
           m_data = new char[m_length + 1];
           strcpy(m_data, other.m_data);
-        }
+        
          
         
         //   2. Check for self-assignment (if this == &other)
